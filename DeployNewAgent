@@ -8,4 +8,5 @@ Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.14.0
 Net START Wazuh
 
 #Validar 
-Get-Service wazuh-agent
+Get-Service | Where-Object { $_.Name -like "*wazuh*" }
+
